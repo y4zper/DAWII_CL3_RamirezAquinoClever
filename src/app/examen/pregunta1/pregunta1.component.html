@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    Calcular Pago
+  </div>
+  <div class="card-body">
+      <div class="mb-3">
+          <label for="txtminutos" class="form-label">Ingrese número:</label>
+          <input type="number" class="form-control" id="txtminutos" 
+          [(ngModel)]="ObjEstacionamiento.minutos">
+      </div>
+      <div class="mb-3">
+         <label for="txthoras" class="form-label">Ingrese horas:</label>
+         <input type="number" class="form-control" id="txthoras" 
+         [(ngModel)]="ObjEstacionamiento.horas">
+      </div>
+
+      <button type="button" (click)="calcularPago()" class="btn btn-primary">CALCULAR</button>
+
+      <div class="alert alert-primary" role="alert" *ngIf="mostrarResultado">
+          El monto a pagar es: {{ObjEstacionamiento.resultado}}
+      </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header">
+      Calcular Promedio
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="txtnombre" class="form-label">Ingrese Nombre:</label>
+            <input type="text" class="form-control" id="txtnombre"
+            [(ngModel)]="objNota.nombre"
+             >
+        </div>
+        <div class="mb-3">
+            <label for="txtnota1" class="form-label">Ingrese Nota1:</label>
+            <input type="number" class="form-control" id="txtnota1"
+            [(ngModel)]="objNota.nota1"
+             >
+        </div>
+        <div class="mb-3">
+            <label for="txtnota2" class="form-label">Ingrese Nota2:</label>
+            <input type="number" class="form-control" id="txtnota2"
+            [(ngModel)]="objNota.nota2"
+             >
+        </div>
+        <div class="mb-3">
+            <label for="txtnota3" class="form-label">Ingrese Nota3:</label>
+            <input type="number" class="form-control" id="txtnota3"
+            [(ngModel)]="objNota.nota3"
+             >
+        </div>
+        <div class="mb-3">
+            <label for="txtnota4" class="form-label">Ingrese Nota4:</label>
+            <input type="number" class="form-control" id="txtnota4"
+            [(ngModel)]="objNota.nota4"
+             >
+        </div>
+        
+
+        <button type="button"  (click)="calcularPromedio()" class="btn btn-primary">CALCULAR</button>
+
+        <div class="alert alert-primary" role="alert" >
+           El promedio es : {{objNota.resultado}}
+        </div>
+        <hr />
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">alumno</th>
+                <th scope="col">Promedio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let alumno of listaAlumnos">
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.promedio}}</td>
+              </tr>      
+            </tbody>
+          </table>
+    </div>
+  </div>
